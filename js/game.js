@@ -6,7 +6,7 @@ const config = {
     type: Phaser.AUTO,
     parent: 'game-canvas',
     scene: [MainScene],
-    backgroundColor: '#0000',
+    backgroundColor: '#000',
     pixelArt: true
 }
 

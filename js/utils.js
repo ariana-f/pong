@@ -1,3 +1,3 @@
 export default function clamp(number, minimum, maximum) {
-    return Math.min(Math.max(num, min), max); 
+    return Math.min(Math.max(number, minimum), maximum); 
 }

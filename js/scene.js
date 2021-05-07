@@ -9,7 +9,7 @@ export default class MainScene extends Phaser.Scene {
     init() {
         this.paddleOffsetX = 80;
 
-        this.scene = {
+        this.score = {
             left: 0,
             right: 0
         }
@@ -22,9 +22,10 @@ export default class MainScene extends Phaser.Scene {
 
     create() {
         this.paddleL = this.add.existing(
-            new Paddle(this, this.paddleOffsetX, 
-            this.game.config.height * 0.5, 'paddle',
-            {'up': 65, 'down': 90})
+            new Paddle(this, 
+                this.paddleOffsetX, 
+                this.game.config.height * 0.5, 'paddle',
+                {'up': 65, 'down': 90})
         );
         this.paddleL.init();
 
@@ -38,7 +39,8 @@ export default class MainScene extends Phaser.Scene {
 
         this.ball = this.add.existing(
             new Ball(this,
-                    0, 0, 'ball',
+                    0, 0, 
+                    'ball',
                     this.paddleL, this.paddleR)
         );
 
@@ -48,10 +50,10 @@ export default class MainScene extends Phaser.Scene {
             {
                 fontFamily: 'Arial',
                 fontSize: 64,
-                color: '#ffff',
+                color: '#fff',
                 align: 'center'
             }
-        ).setOrigin(0, 5)
+        ).setOrigin(0.5)
     }
 
     scoreKeeper(paddle) {

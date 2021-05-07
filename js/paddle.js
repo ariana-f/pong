@@ -50,19 +50,17 @@ export default class Paddle extends Phaser.GameObjects.Sprite {
         
         this.y += this.direction * this.velocity;
 
-            // if(this.y <= this.halfSize){
+            // if(this.y <= this.halfSize)
+            //{
             //     this.y = this.halfSize;
-            // } else if (this.y >= this.scene.game.config.height - this.halfSize){
+            // } else if (this.y >= this.scene.game.config.height - this.halfSize) {
             //     this.y = this.scene.game.config.height - this.halfSize;
             // }
 
         this.y = clamp(this.y, 
                 this.halfSize,
-                this.y = this.scene.game.config.height - this.halfSize);
+                this.scene.game.config.height - this.halfSize);
 
-
-            //this.scene.game.config.height
-        //}
     }
 
 }

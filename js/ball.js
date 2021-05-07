@@ -20,6 +20,8 @@ export default class Ball extends Phaser.GameObjects.Sprite {
 
         this.paddleL = paddleL;
         this.paddleR = paddleR;
+
+        this.halfSize = this.displayWidth * 0.5;
     }
 
     setPaddles(paddleL, paddleR)
@@ -40,8 +42,8 @@ export default class Ball extends Phaser.GameObjects.Sprite {
         let boundsR = this.paddleR.getBounds();
 
         if(
-            Phaser.Geom.Intersect.RectangleToRectangle(myBounds, boundsL) ||
-            Phaser.Geom.Intersect.RectangleToRectangle(myBounds, boundsR)
+            Phaser.Geom.Intersects.RectangleToRectangle(myBounds, boundsL) ||
+            Phaser.Geom.Intersects.RectangleToRectangle(myBounds, boundsR)
         ) {
             this.reverseMe('x');
         }
@@ -80,7 +82,7 @@ export default class Ball extends Phaser.GameObjects.Sprite {
         this.setPosition(
             this.scene.game.config.width * 0.5,
             this.scene.game.config.height * 0.5
-        )
+        );
         this.direction = {
             x: -1 + Math.random() * 2,
             y: -1 + Math.random() * 2
