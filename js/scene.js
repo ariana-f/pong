@@ -25,7 +25,7 @@ export default class MainScene extends Phaser.Scene {
             new Paddle(this, 
                 this.paddleOffsetX, 
                 this.game.config.height * 0.5, 'paddle',
-                {'up': 65, 'down': 90})
+                {'up': 87, 'down': 83})
         );
         this.paddleL.init();
 
@@ -50,7 +50,7 @@ export default class MainScene extends Phaser.Scene {
             {
                 fontFamily: 'Arial',
                 fontSize: 64,
-                color: '#fff',
+                color: '#ff0000',
                 align: 'center'
             }
         ).setOrigin(0.5)
